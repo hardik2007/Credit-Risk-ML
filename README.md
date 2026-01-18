@@ -21,7 +21,22 @@ The focus of the project is correctness, clarity, and understanding of the ML pi
 ---
 
 ## Project Structure
-
+```text
+credit-risk-ml/
+├── app/
+│   └── app.py              
+├── data/
+│   └── raw_data.csv  
+├── models/
+│   └── credit_risk_model.pkl  
+├── src/
+│   ├── build_db.py         
+│   └── model.py            
+├── screenshots/            
+│   ├── app_ui_low.png
+│   └── app_ui_high.png
+├── requirements.txt        
+└── README.md              
 
 ---
 
@@ -46,12 +61,53 @@ Encoders used during training are saved along with the model to ensure consisten
 
 ---
 
+## How to Run the Project Locally
+
+### Prerequisites
+- Python 3.x
+- MySQL installed and running
+- Required Python packages listed in `requirements.txt`
+
+### Steps
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/credit-risk-ml.git
+cd credit-risk-ml
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Set the MySQL password as an environment variable
+export DB_PASSWORD="your_mysql_password"
+
+# 4. Build the database and load data
+python src/build_db.py
+
+# 5. Train the model
+python src/model.py
+
+# 6. Run the application
+streamlit run app/app.py
+```
+
+---
+
 ## Security Note
 
 Database credentials are **not hardcoded** in the source code.  
 The MySQL password is read from an environment variable (`DB_PASSWORD`) to avoid exposing sensitive information.
 
 ---
+## Screenshots
+
+Below are sample outputs from the application demonstrating different credit risk predictions.
+
+### Low Risk Prediction
+![Low Risk Prediction](screenshots/app_ui_lowRisk.png)
+
+### High Risk Prediction
+![High Risk Prediction](screenshots/app_ui_highRisk.png)
 
 ## Technologies Used
 
