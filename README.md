@@ -37,7 +37,7 @@ credit-risk-ml/
 │   └── app_ui_high.png
 ├── requirements.txt        
 └── README.md              
-
+```
 ---
 
 ## Data Flow
